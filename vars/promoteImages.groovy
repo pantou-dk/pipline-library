@@ -6,7 +6,7 @@ def call(String fromProject, String toProject) {
         }
         openshift.withProject(toProject) {
             images.withEach {
-                openshift.tag(fromProject + '/' + it.name + ':latest', it.name + ':latest')
+                openshift.tag(fromProject + '/' + it.name() + ':latest', it.name() + ':latest')
             }
         }
     }
